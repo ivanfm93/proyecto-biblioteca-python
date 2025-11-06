@@ -154,6 +154,17 @@ class Socio(Persona):
             #imprimimos los elementos de la lista usando el metodo .join() y hacemos que si hay mas de un elemento se separen por una coma
             print(", ".join(lista_libros))
     
+# --------------Se añade socios-vip------------------
+class SociosVip(Socio):
+    def __init__(self, nombre, apellido, numero_socio):
+        super().__init__(nombre, apellido, numero_socio)
+        # añadimos el atributo de limite de libros
+        self.limite_libros=10
+    
+    # sobrescribimos el metodo describir
+    def describir(self):
+        print(f"Socio vip (Nº{self.numero_socio}: {self.nombre} {self.apellido}) (limite:{self.limite_libros} libros)")
+
 
 #--------------- vamos con la clase principal-------------
 class Biblioteca:
@@ -240,3 +251,5 @@ if __name__=="__main__":
 
     # volvemos a mirar los libro del socio
     socio1.mostrar_libros()
+
+
